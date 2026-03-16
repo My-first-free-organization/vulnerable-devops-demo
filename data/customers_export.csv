@@ -1,0 +1,9 @@
+customer_id,first_name,last_name,email,phone,ssn,date_of_birth,credit_card,address
+1001,John,Smith,john.smith@gmail.com,+1-555-0101,123-45-6789,1985-03-15,4111111111111111,"123 Main St, New York, NY 10001"
+1002,Sarah,Johnson,sarah.j@yahoo.com,+1-555-0102,234-56-7890,1990-07-22,5500000000000004,"456 Oak Ave, Los Angeles, CA 90001"
+1003,Michael,Williams,m.williams@outlook.com,+1-555-0103,345-67-8901,1978-11-30,378282246310005,"789 Pine Rd, Chicago, IL 60601"
+1004,Emily,Brown,emily.brown@hotmail.com,+1-555-0104,456-78-9012,1995-01-08,6011111111111117,"321 Elm St, Houston, TX 77001"
+1005,David,Jones,david.jones@gmail.com,+1-555-0105,567-89-0123,1982-06-14,4222222222222,"654 Maple Dr, Phoenix, AZ 85001"
+1006,Anna,Kowalski,anna.kowalski@wp.pl,+48-600-123-456,92031245678,1992-03-12,5105105105105100,"ul. Marszalkowska 10, 00-001 Warszawa"
+1007,Hans,Mueller,hans.mueller@web.de,+49-170-1234567,DE-TAX-123456789,1988-09-25,4012888888881881,"Hauptstrasse 42, 10115 Berlin"
+1008,Marie,Dubois,marie.dubois@free.fr,+33-6-12-34-56-78,2-88-09-75-108-042-15,1975-08-03,371449635398431,"15 Rue de la Paix, 75002 Paris"

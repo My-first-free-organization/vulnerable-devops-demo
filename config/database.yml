@@ -1,0 +1,24 @@
+production:
+  adapter: postgresql
+  host: db-prod-cluster.us-east-1.rds.amazonaws.com
+  port: 5432
+  database: acme_production
+  username: admin
+  password: SuperSecret!Prod2026
+  
+  # AWS credentials for RDS IAM auth
+  aws_access_key_id: AKIAIOSFODNN7EXAMPLE
+  aws_secret_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+  aws_region: us-east-1
+
+staging:
+  adapter: postgresql
+  host: db-staging.us-east-1.rds.amazonaws.com
+  port: 5432
+  database: acme_staging
+  username: staging_user
+  password: Stag1ng_Pass!2026
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3

@@ -1,0 +1,30 @@
+{
+  "patients": [
+    {
+      "patient_id": "PAT-2026-001",
+      "name": "Robert Anderson",
+      "ssn": "678-90-1234",
+      "date_of_birth": "1960-04-12",
+      "medical_record_number": "MRN-445566",
+      "diagnosis": "Type 2 Diabetes Mellitus",
+      "medications": ["Metformin 500mg", "Lisinopril 10mg"],
+      "insurance_id": "BCBS-IL-789012345",
+      "physician": "Dr. Patricia Chen",
+      "last_visit": "2026-02-28",
+      "notes": "Patient reports increased blood glucose levels. A1C at 7.8%. Adjusted medication dosage."
+    },
+    {
+      "patient_id": "PAT-2026-002",
+      "name": "Jennifer Martinez",
+      "ssn": "789-01-2345",
+      "date_of_birth": "1985-11-20",
+      "medical_record_number": "MRN-778899",
+      "diagnosis": "Major Depressive Disorder",
+      "medications": ["Sertraline 100mg", "Alprazolam 0.5mg PRN"],
+      "insurance_id": "AETNA-TX-456789012",
+      "physician": "Dr. James Wilson",
+      "last_visit": "2026-03-10",
+      "notes": "Patient showing improvement with current SSRI regimen. Continue monitoring."
+    }
+  ]
+}

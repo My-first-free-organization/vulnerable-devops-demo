@@ -1,0 +1,44 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+env:
+  # FIXME: These should use GitHub Secrets, not hardcoded values!
+  AWS_ACCESS_KEY_ID: AKIAIOSFODNN7EXAMPLE
+  AWS_SECRET_ACCESS_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+  DOCKER_REGISTRY_PASSWORD: DockerHub!Pass2026
+  DEPLOY_TOKEN: glpat-xxxxxxxxxxxxxxxxxxxx
+  SONAR_TOKEN: sqp_abc123def456ghi789jkl012mno345pqr678
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Build Docker image
+        run: |
+          docker build -t acme-app:${{ github.sha }} .
+          echo "DockerHub!Pass2026" | docker login -u acme-deploy --password-stdin
+          docker push acme-app:${{ github.sha }}
+
+      - name: Deploy to ECS
+        run: |
+          aws ecs update-service \
+            --cluster production \
+            --service acme-app \
+            --force-new-deployment
+        env:
+          DATABASE_URL: postgresql://admin:P@ssw0rd!2026@db-prod.acme-corp.com:5432/production
+
+  notify:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data '{"text":"Deployed ${{ github.sha }} to production"}' \
+            https://slack-webhook.acme-corp.com/hooks/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX

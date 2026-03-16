@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://admin:P@ssw0rd!2026@postgres:5432/production
+      - REDIS_URL=redis://:MyRedisSecret2026@redis:6379/0
+      - SECRET_KEY=django-insecure-key-abc123def456ghi789jkl012
+      - AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+      - AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: P@ssw0rd!2026
+      POSTGRES_DB: production
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    command: redis-server --requirepass MyRedisSecret2026
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "443:443"
+    volumes:
+      - ./certs/server.key:/etc/nginx/ssl/server.key
+      - ./certs/server.crt:/etc/nginx/ssl/server.crt
+
+volumes:
+  pgdata:
