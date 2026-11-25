@@ -1,4 +1,4 @@
 # Changelog
 
-## Sprint 137
-- vulnerable-devops-demo: maintenance and dependency updates (2026-11-25 09:04)
+## Sprint 138
+- vulnerable-devops-demo: maintenance and dependency updates (2026-11-25 13:06)
